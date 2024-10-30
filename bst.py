@@ -1,5 +1,4 @@
 from bstnode import BSTNode
-from typing import Optional
 
 """
 The code to implement a binary search tree. You must fill in all of the methods
@@ -36,7 +35,7 @@ class BST:
         Returns the BSTNode with key equal to `key` if found, or None otherwise
     """
 
-    def search(self, key: int, node: BSTNode) -> Optional[BSTNode]:
+    def search(self, key: int, node: BSTNode) -> BSTNode|None:
         pass
 
     """
@@ -89,7 +88,7 @@ class BST:
     def minimum(self, node: BSTNode) -> BSTNode:
         pass
 
-    def delete(self, key: int) -> Optional[int]:
+    def delete(self, key: int) -> int|None:
         pass
 
     """
@@ -103,14 +102,14 @@ class BST:
         node: node we're looking to traverse from.
         
     Returns:
-        A list of the nodes that you have visited.
+        A list of the keys of the nodes visited.
     """
 
-    def preorder(self, node: BSTNode) -> list[BSTNode]:
+    def preorder(self, node: BSTNode) -> list[int]:
         pass
 
-    def inorder(self, node: BSTNode) -> list[BSTNode]:
+    def inorder(self, node: BSTNode) -> list[int]:
         pass
 
-    def postorder(self, node: BSTNode) -> list[BSTNode]:
+    def postorder(self, node: BSTNode) -> list[int]:
         pass
