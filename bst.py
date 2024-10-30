@@ -30,14 +30,13 @@ class BST:
     
     Args:
         key: integer key that you are searching for
-        node: the node we are currently checking (if not given, use the root)
+        node: the node we are currently checking
         
     Return:
         Returns the BSTNode with key equal to `key` if found, or None otherwise
     """
 
-    def search(self, key: int, node: BSTNode = None) -> Optional[BSTNode]:
-        node = node or self.root  # Don't remove this line; if no value is passed, start at the root
+    def search(self, key: int, node: BSTNode) -> Optional[BSTNode]:
         pass
 
     """
@@ -87,7 +86,7 @@ class BST:
     """
 
     # Helper function to find the smallest key starting at node
-    def minimum(self, node: BSTNode) -> int:
+    def minimum(self, node: BSTNode) -> BSTNode:
         pass
 
     def delete(self, key: int) -> Optional[int]:
@@ -101,20 +100,17 @@ class BST:
     Postorder: Visit left child, right child, node in that order
     
     Args:
-        node: optional node for recursive calls. If no node is given, use the root.
+        node: node we're looking to traverse from.
         
     Returns:
         A list of the nodes that you have visited.
     """
 
-    def preorder(self, node: BSTNode = None) -> list[BSTNode]:
-        node = node or self.root # Don't remove this line; if no value is passed, start at the root
+    def preorder(self, node: BSTNode) -> list[BSTNode]:
         pass
 
-    def inorder(self, node: BSTNode = None) -> list[BSTNode]:
-        node = node or self.root # Don't remove this line; if no value is passed, start at the root
+    def inorder(self, node: BSTNode) -> list[BSTNode]:
         pass
 
-    def postorder(self, node: BSTNode = None) -> list[BSTNode]:
-        node = node or self.root # Don't remove this line; if no value is passed, start at the root
+    def postorder(self, node: BSTNode) -> list[BSTNode]:
         pass

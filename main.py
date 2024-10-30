@@ -41,14 +41,14 @@ tree.insert(23)
 root = tree.get_root()
 
 # Search for a node
-assert tree.search(20).key == 20 # Exists
-assert not tree.search(30) # Doesn't exist, returns None
+assert tree.search(20, root).key == 20 # Exists
+assert not tree.search(30, root) # Doesn't exist, returns None
 
 # Find the minimum in the tree
-assert tree.minimum(root) == 10
+assert tree.minimum(root).key == 10
 
 # Find the minimum from a specific node
-assert tree.minimum(root.right_child) == 20
+assert tree.minimum(root.right_child).key == 20
 
 # Delete these nodes
 assert tree.delete(12) == 12 # Exists so should return 12
