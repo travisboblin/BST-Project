@@ -1,6 +1,6 @@
 import random
 from bstnode import BSTNode
-from bst_solution import BST
+from bst import BST
 
 # Helper function for checking BST property
 def traverse_bst(node) -> None:

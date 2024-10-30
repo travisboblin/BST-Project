@@ -73,11 +73,13 @@ class BST:
     Otherwise, there are three situations to consider:
         1) The node has no children (is a leaf node). Update its parent (if it exists) to no
         longer point to it and it is now removed from the tree.
-        2) The node has one child. Copy that child's key to the current node and "remove" that child by
-        setting its left/right child property to None.
+        2) The node has one child. Have that child point to the current node's parent (if it exists)
+        and update the current node's parent to point to that same child. You are updating the
+        parent/child relationships to essentially "remove" reference to this current node, skipping
+        over it.
         3) (BONUS MARKS) The node has two children. Find this node's successor. That means find the minimum
         of node.right_child. Replace this node's key with that one. Now look down node.right_child to delete
-        the key you just found (it should always be a leaf node so you can perform those steps above).
+        the key you just found. It will always be a leaf or only have a right child (why?)
     
     After deleting, don't forget to update self.root if it has changed!
     
