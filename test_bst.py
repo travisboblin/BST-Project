@@ -55,7 +55,7 @@ def test_search() -> None:
 
 """
 For a random list of 15 numbers, make sure your implementation maintains the BST structure.
-This thoroughly tests your insert function.
+This thoroughly tests your insert and search function.
 """
 # 6 points
 def test_insert_random() -> None:
@@ -71,6 +71,7 @@ def test_insert_random() -> None:
 
     for i in nodes_to_insert:
         bst.insert(i)
+        assert bst.search(i, bst.get_root()).key == i
 
     traverse_bst(bst.get_root())
 
@@ -118,7 +119,7 @@ def test_inorder_traversal():
         bst.insert(i)
 
     assert bst.inorder(bst.get_root()) == sorted(nodes_to_insert)
-    
+
 # 2 marks
 def test_postorder_traversal():
     bst = BST()
@@ -147,6 +148,7 @@ def test_delete_not_exist() -> None:
     nodes_to_insert = [10, 5, 13, 7, 4, 12, 17, 3, 6, 14]
     for i in nodes_to_insert:
         bst.insert(i)
+        assert bst.search(i, bst.get_root()).key == i # Did you actually build a tree?
 
     assert not bst.delete(500)
 
@@ -209,6 +211,10 @@ def test_delete_many_random() -> None:
                 nodes_to_insert.add(i)
                 num_nodes += 1
 
+        for i in nodes_to_insert:
+            bst.insert(i)
+            assert bst.search(i, bst.get_root()).key == i
+
         # Grab 5 of the elements we made at random
         nodes_to_delete = set()
         num_nodes = 0
@@ -220,7 +226,10 @@ def test_delete_many_random() -> None:
 
         # Delete them all
         for i in nodes_to_delete:
-            bst.delete(i)
+            assert bst.delete(i) == i
+
+        # Did we really delete what we expected?
+        assert sorted(list(nodes_to_insert - nodes_to_delete)) == sorted(bst.inorder(bst.get_root()))
 
         # After deleting them all, check they're gone
         for i in nodes_to_delete:
