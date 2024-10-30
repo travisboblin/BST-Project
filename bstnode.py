@@ -1,5 +1,3 @@
-from typing import Optional
-
 """
 Binary search tree node object. On creation, pass the key.
 
@@ -17,6 +15,6 @@ Usage: node = BSTNode(5)
 class BSTNode:
     def __init__(self, key: int):
         self.key = key
-        self.left_child: Optional[BSTNode] = None
-        self.right_child: Optional[BSTNode] = None
-        self.parent: Optional[BSTNode] = None
+        self.left_child: BSTNode|None = None
+        self.right_child: BSTNode|None = None
+        self.parent: BSTNode|None = None

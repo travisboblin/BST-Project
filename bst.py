@@ -22,6 +22,10 @@ class BST:
     def get_root(self) -> BSTNode:
         return self.root
 
+    # This node is purely for the unit tests; you don't need it as you can use self.root here
+    def update_root(self, node: BSTNode) -> None:
+        self.root = node
+
     """
     Recursively search for the key in `key` using the binary search tree property.
     Recall that this property says, for any specific node, all of its left children's keys
